@@ -14,15 +14,15 @@ const path = require('path');
 
 const CONFIG = {
   scrapers: [
-    { name: 'market-trends-scraper.js', timeout: 300000 }, // 5 min
-    { name: 'icp-monitor.js', timeout: 180000 },           // 3 min
-    { name: 'concurrent-tracker.js', timeout: 360000 }     // 6 min
+    { name: 'scrapers/market-trends-scraper.js', timeout: 300000 }, // 5 min
+    { name: 'scrapers/icp-monitor.js', timeout: 180000 },           // 3 min
+    { name: 'scrapers/concurrent-tracker.js', timeout: 360000 }     // 6 min
   ],
   outputDir: './scraper-output',
   requiredFiles: [
-    'market-trends-scraper.js',
-    'icp-monitor.js',
-    'concurrent-tracker.js',
+    'scrapers/market-trends-scraper.js',
+    'scrapers/icp-monitor.js',
+    'scrapers/concurrent-tracker.js',
     'package.json',
     'README.md'
   ]
