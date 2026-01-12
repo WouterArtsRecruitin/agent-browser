@@ -1,0 +1,676 @@
+{
+  "spreadsheet_id": "14pX6dV6-5KLHYPuU1YsZSzu5SLHVbUxU78YQvIIRV_c",
+  "sheets": {
+    "Market Trends": {
+      "sheet_id": 670695312,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "13-01-2025",
+            "=WEEKNUM(A2)",
+            "PLC Programmeur",
+            "Gelderland",
+            "Automation",
+            127,
+            "=IFERROR(VLOOKUP(C2&D2,QUERY(A:G,\"SELECT C&D, F WHERE B = \"&(B2-1)),2,FALSE),0)",
+            "=IFERROR(IF(G2=0,0,(F2-G2)/G2*100),0)",
+            4850,
+            4200,
+            5500,
+            "Siemens, TIA Portal, SCADA",
+            "Siemens, ASML, Vanderlande",
+            "=IF(OR(H2>15,F2>100),\"HIGH\",IF(OR(H2>8,F2>50),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "13-01-2025",
+            "=WEEKNUM(A3)",
+            "Monteur Elektro",
+            "Overijssel",
+            "Industrial",
+            89,
+            82,
+            "=IFERROR(IF(G3=0,0,(F3-G3)/G3*100),0)",
+            3600,
+            3200,
+            4000,
+            "VCA, Laagspanning, NEN1010",
+            "Grolsch, TenCate, Stork",
+            "=IF(OR(H3>15,F3>100),\"HIGH\",IF(OR(H3>8,F3>50),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            "13-01-2025",
+            "=WEEKNUM(A4)",
+            "Servicemonteur",
+            "Noord-Brabant",
+            "HVAC",
+            156,
+            128,
+            "=IFERROR(IF(G4=0,0,(F4-G4)/G4*100),0)",
+            3450,
+            3000,
+            3900,
+            "Airco, CV, F-gas",
+            "Bosch, Mitsubishi, Daikin",
+            "=IF(OR(H4>15,F4>100),\"HIGH\",IF(OR(H4>8,F4>50),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 5,
+          "values": [
+            "13-01-2025",
+            "=WEEKNUM(A5)",
+            "Werkvoorbereider Bouw",
+            "Utrecht",
+            "Construction",
+            67,
+            71,
+            "=IFERROR(IF(G5=0,0,(F5-G5)/G5*100),0)",
+            4200,
+            3800,
+            4600,
+            "AutoCAD, Revit, Planning",
+            "BAM, VolkerWessels, Dura Vermeer",
+            "=IF(OR(H5>15,F5>100),\"HIGH\",IF(OR(H5>8,F5>50),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 6,
+          "values": [
+            "13-01-2025",
+            "=WEEKNUM(A6)",
+            "Constructeur",
+            "Gelderland",
+            "Metal",
+            134,
+            119,
+            "=IFERROR(IF(G6=0,0,(F6-G6)/G6*100),0)",
+            3950,
+            3500,
+            4400,
+            "SolidWorks, Inventor, Tekenen",
+            "Demka, Wagenborg Nedlift, VDL",
+            "=IF(OR(H6>15,F6>100),\"HIGH\",IF(OR(H6>8,F6>50),\"MEDIUM\",\"LOW\"))"
+          ]
+        }
+      ],
+      "data_validation": {
+        "C2:C1000": {
+          "type": "LIST",
+          "values": [
+            "Werkvoorbereider Elektro",
+            "Werkvoorbereider Bouw",
+            "Calculator Bouw",
+            "Constructeur",
+            "Servicemonteur",
+            "Monteur Elektro",
+            "PLC Programmeur",
+            "Projectleider Elektro",
+            "Projectleider Installatie",
+            "Allround Monteur",
+            "Mechatronicus",
+            "Tekenaar Constructeur"
+          ]
+        },
+        "D2:D1000": {
+          "type": "LIST",
+          "values": [
+            "Gelderland",
+            "Overijssel",
+            "Noord-Brabant",
+            "Utrecht",
+            "Limburg",
+            "Flevoland"
+          ]
+        }
+      },
+      "conditional_formatting": [
+        {
+          "range": "N2:N1000",
+          "rules": [
+            {
+              "condition": "TEXT_EQ",
+              "value": "HIGH",
+              "backgroundColor": {
+                "red": 1,
+                "green": 0.42,
+                "blue": 0.42
+              }
+            },
+            {
+              "condition": "TEXT_EQ",
+              "value": "MEDIUM",
+              "backgroundColor": {
+                "red": 1,
+                "green": 0.65,
+                "blue": 0
+              }
+            },
+            {
+              "condition": "TEXT_EQ",
+              "value": "LOW",
+              "backgroundColor": {
+                "red": 0.56,
+                "green": 0.93,
+                "blue": 0.56
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ICP Activity": {
+      "sheet_id": 708415054,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "13-01-2025",
+            "ASML",
+            "Manufacturing",
+            "Gelderland",
+            8,
+            "PLC Programmeur, Mechatronicus",
+            "Nieuwe chip factory Veldhoven",
+            "https://asml.com/news",
+            10,
+            "=IF(AND(I2>=7,E2>0),\"HIGH\",IF(AND(I2>=5,E2>0),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "13-01-2025",
+            "VDL Groep",
+            "Automotive",
+            "Noord-Brabant",
+            12,
+            "Constructeur, Monteur Elektro",
+            "Expansie EV productie",
+            "https://vdlgroep.com/news",
+            9,
+            "=IF(AND(I3>=7,E3>0),\"HIGH\",IF(AND(I3>=5,E3>0),\"MEDIUM\",\"LOW\"))"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            "13-01-2025",
+            "Philips",
+            "Healthcare",
+            "Noord-Brabant",
+            5,
+            "PLC Programmeur, Servicemonteur",
+            "R&D uitbreiding Best",
+            "https://philips.com/news",
+            8,
+            "=IF(AND(I4>=7,E4>0),\"HIGH\",IF(AND(I4>=5,E4>0),\"MEDIUM\",\"LOW\"))"
+          ]
+        }
+      ],
+      "data_validation": {
+        "C2:C1000": {
+          "type": "LIST",
+          "values": [
+            "Oil & Gas",
+            "Construction",
+            "Manufacturing",
+            "Automation",
+            "Renewable Energy",
+            "Metal",
+            "Installation",
+            "Offshore",
+            "Process Industry",
+            "Machinebouw",
+            "Utilities",
+            "Petrochemie"
+          ]
+        },
+        "D2:D1000": {
+          "type": "LIST",
+          "values": [
+            "Gelderland",
+            "Overijssel",
+            "Noord-Brabant",
+            "Utrecht",
+            "Limburg",
+            "Flevoland"
+          ]
+        },
+        "I2:I1000": {
+          "type": "LIST",
+          "values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        }
+      }
+    },
+    "Ghosting Patterns": {
+      "sheet_id": 658042795,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            3,
+            "=DATE(YEAR(TODAY()),1,1)+(A2-1)*7",
+            12,
+            "Automation",
+            "Gelderland",
+            "PLC Programmeur",
+            0.75,
+            "Budgethold Q1, hiring resumes Q2",
+            "=IF(C2>5,TRUE,FALSE)"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            3,
+            "=DATE(YEAR(TODAY()),1,1)+(A3-1)*7",
+            8,
+            "Construction",
+            "Noord-Brabant",
+            "Werkvoorbereider Bouw",
+            0.5,
+            "Positions filled internally",
+            "=IF(C3>5,TRUE,FALSE)"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            3,
+            "=DATE(YEAR(TODAY()),1,1)+(A4-1)*7",
+            4,
+            "Manufacturing",
+            "Overijssel",
+            "Monteur Elektro",
+            0.25,
+            "Salaris verwachtingen mismatch",
+            "=IF(C4>5,TRUE,FALSE)"
+          ]
+        }
+      ]
+    },
+    "Sector News": {
+      "sheet_id": 1150728346,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "13-01-2025",
+            "Automatiseringsgids",
+            "AI adoption in manufacturing stijgt 40%",
+            "https://automgids.nl/ai-2025",
+            "Automation",
+            9,
+            "Trend",
+            "=IF(F2>=7,TRUE,FALSE)"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "13-01-2025",
+            "Cobouw",
+            "Tekort aan werkvoorbereiders neemt toe",
+            "https://cobouw.nl/tekort-wv",
+            "Construction",
+            8,
+            "Challenge",
+            "=IF(F3>=7,TRUE,FALSE)"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            "13-01-2025",
+            "Energeia",
+            "Groei zonne-energie vraagt meer servicemonteurs",
+            "https://energeia.nl/solar-2025",
+            "Renewable Energy",
+            7,
+            "Market Shift",
+            "=IF(F4>=7,TRUE,FALSE)"
+          ]
+        }
+      ],
+      "data_validation": {
+        "E2:E1000": {
+          "type": "LIST",
+          "values": [
+            "Oil & Gas",
+            "Construction",
+            "Manufacturing",
+            "Automation",
+            "Renewable Energy",
+            "Metal",
+            "Installation",
+            "Offshore",
+            "Process Industry",
+            "Machinebouw",
+            "Utilities",
+            "Petrochemie"
+          ]
+        },
+        "F2:F1000": {
+          "type": "LIST",
+          "values": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ]
+        },
+        "G2:G1000": {
+          "type": "LIST",
+          "values": [
+            "Trend",
+            "Innovation",
+            "Challenge",
+            "Policy",
+            "Market Shift",
+            "Technology",
+            "Skills Gap"
+          ]
+        }
+      }
+    },
+    "Concurrent Activity": {
+      "sheet_id": 2010870672,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "13-01-2025",
+            "Brunel Nederland",
+            "1",
+            2,
+            "AI recruitment, Skills gap evolution",
+            450,
+            "=IFERROR((F2-VLOOKUP(B2,A:F,6,FALSE))/VLOOKUP(B2,A:F,6,FALSE)*100,0)",
+            true,
+            "=(D2*3)+(IF(H2,5,0))+(G2*2)",
+            "=IF(I2>15,TRUE,FALSE)",
+            "Focus op AI-gedreven sourcing, nieuwe blog serie skills gap"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "13-01-2025",
+            "Yacht",
+            "1",
+            1,
+            "Offshore renewable energy trends",
+            380,
+            "=IFERROR((F3-VLOOKUP(B3,A:F,6,FALSE))/VLOOKUP(B3,A:F,6,FALSE)*100,0)",
+            false,
+            "=(D3*3)+(IF(H3,5,0))+(G3*2)",
+            "=IF(I3>15,TRUE,FALSE)",
+            "Lage activiteit deze week, focus op offshore"
+          ]
+        }
+      ],
+      "data_validation": {
+        "B2:B1000": {
+          "type": "LIST",
+          "values": [
+            "Brunel Nederland",
+            "Yacht",
+            "YER",
+            "Synsel Techniek",
+            "RGF Staffing",
+            "Time to Hire",
+            "ENHR",
+            "RecruitmentNow",
+            "Profound",
+            "Randstad Sourceright",
+            "Manpower RPO",
+            "Vanujska",
+            "Continu",
+            "FYGI",
+            "Ede"
+          ]
+        },
+        "C2:C1000": {
+          "type": "LIST",
+          "values": [
+            "1",
+            "2"
+          ]
+        }
+      }
+    },
+    "Newsletter Monthly Data": {
+      "sheet_id": 1377813384,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "January 2025",
+            "=TODAY()",
+            "Draft",
+            "=SUMIF('Market Trends'!B:B,WEEKNUM(EOMONTH(B2,0)),'Market Trends'!F:F)",
+            "=IFERROR((D2-SUMIF('Market Trends'!B:B,WEEKNUM(EOMONTH(B2,-1)),'Market Trends'!F:F))/SUMIF('Market Trends'!B:B,WEEKNUM(EOMONTH(B2,-1)),'Market Trends'!F:F)*100,0)",
+            "=INDEX('Market Trends'!C:C,MATCH(MAX('Market Trends'!H:H),'Market Trends'!H:H,0))",
+            22.1,
+            "Gelderland",
+            847,
+            "=AVERAGEIF('Market Trends'!B:B,WEEKNUM(EOMONTH(B2,0)),'Market Trends'!I:I)",
+            7.8,
+            "PLC Programmeur",
+            487,
+            22.1,
+            4850,
+            "Siemens, TIA Portal, SCADA",
+            "Gelderland, Noord-Brabant, Utrecht",
+            "Focus op specifieke PLC merken in Boolean searches",
+            "Servicemonteur",
+            421,
+            18.7,
+            3450,
+            "F-gas, CV, Airco",
+            "Noord-Brabant, Limburg, Gelderland",
+            "Target HVAC bedrijven die expanderen",
+            "Constructeur",
+            389,
+            12.6,
+            3950,
+            "SolidWorks, Inventor, Tekenen",
+            "Gelderland, Overijssel, Utrecht",
+            "Niche in machinebouw en metaalsector"
+          ]
+        }
+      ],
+      "data_validation": {
+        "C2:C1000": {
+          "type": "LIST",
+          "values": [
+            "Draft",
+            "Ready to Send",
+            "Sent",
+            "Archived"
+          ]
+        }
+      }
+    },
+    "Dashboard": {
+      "sheet_id": 495924025,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "Total Vacatures This Week",
+            "=SUMIF('Market Trends'!B:B,WEEKNUM(TODAY()),'Market Trends'!F:F)",
+            "=NOW()"
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "Change vs Last Week (%)",
+            "=(B2-SUMIF('Market Trends'!B:B,WEEKNUM(TODAY())-1,'Market Trends'!F:F))/SUMIF('Market Trends'!B:B,WEEKNUM(TODAY())-1,'Market Trends'!F:F)*100",
+            "=NOW()"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            "HIGH Priority Posts",
+            "=COUNTIF('Market Trends'!N:N,\"HIGH\")",
+            "=NOW()"
+          ]
+        },
+        {
+          "row": 5,
+          "values": [
+            "Hottest Functiegroep",
+            "=INDEX('Market Trends'!C:C,MATCH(MAX('Market Trends'!F:F),'Market Trends'!F:F,0))",
+            "=NOW()"
+          ]
+        },
+        {
+          "row": 6,
+          "values": [
+            "Newsletter Status",
+            "=INDEX('Newsletter Monthly Data'!C:C,MATCH(MAX('Newsletter Monthly Data'!B:B),'Newsletter Monthly Data'!B:B,0))",
+            "=NOW()"
+          ]
+        },
+        {
+          "row": 7,
+          "values": [
+            "Content Opportunities",
+            "=COUNTIF('Concurrent Activity'!J:J,TRUE)+COUNTIF('ICP Activity'!J:J,\"HIGH\")",
+            "=NOW()"
+          ]
+        }
+      ]
+    },
+    "README": {
+      "sheet_id": 418295498,
+      "sample_data": [
+        {
+          "row": 2,
+          "values": [
+            "Overview",
+            "Recruitin Intelligence Hub - Data-driven recruitment intelligence system. Tracks 12 functiegroepen \u00d7 6 regions = 72 market segments. Weekly automated scraping feeds LinkedIn content engine + monthly newsletter."
+          ]
+        },
+        {
+          "row": 3,
+          "values": [
+            "Update Schedule",
+            "Market Trends: Weekly Mon 06:00 | ICP Activity: Weekly Mon 06:30 | Ghosting: Weekly Mon 08:00 | Sector News: Daily 06:00 | Concurrent: Weekly/Bi-weekly | Newsletter: Monthly last day 20:00"
+          ]
+        },
+        {
+          "row": 4,
+          "values": [
+            "Sheet 1: Market Trends",
+            "Weekly scraping: 12 FG \u00d7 6 regions \u00d7 2 sites (Indeed + Monsterboard) = 144 pages. Tracks: volume, salary, skills, companies. AUTO-CALCULATES: Week number, change %, content priority (HIGH/MEDIUM/LOW)."
+          ]
+        },
+        {
+          "row": 5,
+          "values": [
+            "Sheet 2: ICP Activity",
+            "TOP 50 prospect monitoring. Tracks: new vacancies, recent news, match score (1-10). Triggers HIGH priority when Match\u22657 AND Vacancies>0. Used for news hijack content opportunities."
+          ]
+        },
+        {
+          "row": 6,
+          "values": [
+            "Sheet 3: Ghosting Patterns",
+            "Pipedrive deal pipeline analysis. Identifies patterns in stalled deals (Stage 2 >21 days). Cross-references vacancy status. Reportable=TRUE if >5 deals stalled in same pattern."
+          ]
+        },
+        {
+          "row": 7,
+          "values": [
+            "Sheet 4: Sector News",
+            "Daily industry news aggregation. Sources: Tech blogs, industry sites, CBS/UWV data. Relevance scoring 1-10. Content Opportunity=TRUE if Relevance\u22657."
+          ]
+        },
+        {
+          "row": 8,
+          "values": [
+            "Sheet 5: Concurrent Activity",
+            "15 competitors monitoring (Tier 1: weekly, Tier 2: bi-weekly). Tracks: blog posts, topics, vacatures, PR. Activity Score = (Posts\u00d73)+(PR\u00d75)+(Growth\u00d72). Opportunity if >15."
+          ]
+        },
+        {
+          "row": 9,
+          "values": [
+            "Sheet 6: Newsletter Monthly Data",
+            "Monthly aggregation from all sheets. Auto-generates: market summary, top 3 FG's, trends, companies, skills. Feeds Resend email via Claude API. Formulas pull from Market Trends automatically."
+          ]
+        },
+        {
+          "row": 10,
+          "values": [
+            "Sheet 7: Dashboard",
+            "Real-time overview with auto-calculated metrics. Updates whenever source sheets change. Tracks: weekly vacatures, change %, content opportunities, newsletter status."
+          ]
+        },
+        {
+          "row": 11,
+          "values": [
+            "Zapier Workflows",
+            "Zap 1: Market Trends HIGH \u2192 Claude \u2192 Notion. Zap 2: ICP Activity HIGH \u2192 Claude \u2192 Notion. Zap 6: Concurrent Opportunity \u2192 Claude \u2192 Notion. Zap Newsletter: Monthly \u2192 Claude \u2192 Resend."
+          ]
+        },
+        {
+          "row": 12,
+          "values": [
+            "Formulas Guide",
+            "Week Number: =WEEKNUM(date). Change %: =(new-old)/old*100. Priority: IF logic HIGH>15% OR vol>100. Content Opportunity: IF(score>threshold,TRUE,FALSE). Always use IFERROR() for robustness."
+          ]
+        },
+        {
+          "row": 13,
+          "values": [
+            "Data Validation",
+            "Functiegroep: 12 options. Region: 6 options. Sector: 12 options. Match Score: 1-10. Tier: 1-2. Status: Draft/Ready/Sent/Archived. Apply to entire column (e.g., C2:C1000)."
+          ]
+        },
+        {
+          "row": 14,
+          "values": [
+            "Conditional Formatting",
+            "Priority colors: HIGH=Red (#FF6B6B), MEDIUM=Orange (#FFA500), LOW=Green (#90EE90). Activity Score: >20=Red, 10-20=Orange, <10=Green. Checkboxes: TRUE=Yellow highlight."
+          ]
+        },
+        {
+          "row": 15,
+          "values": [
+            "Troubleshooting",
+            "Formula errors #REF: Check exact sheet names. Dropdown not working: Re-apply validation to C2:C1000 range. Newsletter not generating: Verify month format 'January 2025'. Contact: wouter@recruitin.nl"
+          ]
+        }
+      ]
+    }
+  }
+}

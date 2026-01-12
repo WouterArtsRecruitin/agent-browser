@@ -1,0 +1,28 @@
+{
+  "name": "recruitin-intelligence-hub-scrapers",
+  "version": "1.0.0",
+  "description": "Agent-Browser scrapers voor markt intelligence (vacatures, ICP, concurrenten)",
+  "main": "index.js",
+  "scripts": {
+    "scrape:market": "node market-trends-scraper.js",
+    "scrape:icp": "node icp-monitor.js",
+    "scrape:concurrent": "node concurrent-tracker.js",
+    "scrape:all": "npm run scrape:market && npm run scrape:icp && npm run scrape:concurrent",
+    "test": "echo 'Run npm run scrape:all to test all scrapers'"
+  },
+  "keywords": [
+    "recruitment",
+    "intelligence",
+    "scraping",
+    "market-analysis"
+  ],
+  "author": "Wouter Arts <wouter@recruitin.nl>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^21.11.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

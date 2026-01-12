@@ -1,0 +1,23 @@
+# Credentials
+google-credentials.json
+.env
+
+# Logs
+*.log
+
+# Node modules
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files
+*.tmp
+temp/

@@ -1,0 +1,85 @@
+name: Intelligence Hub - Weekly Scraping
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'  # Monday 08:00 CET (07:00 UTC)
+
+  workflow_dispatch:
+    inputs:
+      scraper:
+        description: 'Which scraper to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - market-trends
+          - icp-monitor
+          - concurrent-tracker
+          - test-only
+
+jobs:
+  scrape-intelligence:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Test (if test-only)
+        if: github.event.inputs.scraper == 'test-only'
+        run: node test-deployment.js
+
+      - name: Run Market Trends Scraper
+        if: github.event.inputs.scraper == 'all' || github.event.inputs.scraper == 'market-trends' || github.event_name == 'schedule'
+        run: node scrapers/market-trends-scraper.js
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+
+      - name: Run ICP Monitor
+        if: github.event.inputs.scraper == 'all' || github.event.inputs.scraper == 'icp-monitor' || github.event_name == 'schedule'
+        run: node scrapers/icp-monitor.js
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+
+      - name: Run Concurrent Tracker
+        if: github.event.inputs.scraper == 'all' || github.event.inputs.scraper == 'concurrent-tracker' || github.event_name == 'schedule'
+        run: node scrapers/concurrent-tracker.js
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+
+      - name: Upload CSV Artifacts
+        if: github.event.inputs.scraper != 'test-only'
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelligence-hub-${{ github.run_number }}
+          path: |
+            *.csv
+            *_summary_*.txt
+          retention-days: 30
+
+      - name: Create Summary
+        if: always()
+        run: |
+          echo "## Intelligence Hub Run Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Run Number:** ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Scraper:** ${{ github.event.inputs.scraper || 'all (scheduled)' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Output Files" >> $GITHUB_STEP_SUMMARY
+          ls -lh *.csv 2>/dev/null || echo "No CSV files generated"
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Download CSV artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "2. Import to Google Sheets" >> $GITHUB_STEP_SUMMARY
+          echo "3. Review insights in Dashboard" >> $GITHUB_STEP_SUMMARY
